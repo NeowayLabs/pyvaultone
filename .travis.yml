@@ -1,0 +1,31 @@
+os:
+  - linux
+
+sudo: required
+
+services:
+  - docker
+
+language: python
+
+python:
+  - "3.7"
+
+jobs:
+  include:
+    - stage: lint
+      script: make lint
+    - stage: check
+      script: make check
+    - stage: integration
+      script: make check-integration
+    - stage: cleanup
+      script: make cleanup
+
+notifications:
+  email:
+    - matheus.vill@neoway.com.br
+    - leonardo.borges@neoway.com.br
+    - josue.machado@neoway.com.br
+    - murilo.medeiros@neoway.com.br
+    - victor.vieira@neoway.com.br
