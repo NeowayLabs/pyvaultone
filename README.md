@@ -1,5 +1,7 @@
 # pyvaultone
 
+[![Build Status](https://travis-ci.com/NeowayLabs/pyvaultone.svg?branch=main)](https://travis-ci.com/NeowayLabs/pyvaultone)
+
 This project is a library to abstract relevant interactions to the VaultOne application API. Relevant interactions are defined as necessary interactions in order for a bot to retrieve credentials that will be used in the crawling process.
 
 You need a valid Vault One credential to use this library. The username and the password must be encoded in base64 format and must be set to the following environment variables: VAULT_ONE_API_USERNAME, VAULT_ONE_API_PASSWORD and VAULT_ONE_API_BASE_URL.
