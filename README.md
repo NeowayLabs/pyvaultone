@@ -6,6 +6,8 @@ This project is a library to abstract relevant interactions to the VaultOne appl
 
 You need a valid Vault One credential to use this library. The username and the password must be encoded in base64 format and must be set to the following environment variables: VAULT_ONE_API_USERNAME, VAULT_ONE_API_PASSWORD and VAULT_ONE_API_BASE_URL.
 
+For more information about Vault One, you can check it out here: https://vaultone.com/
+
 These interactions are read-only, thus this library will not implement write operations using the VaultOne API. The necessary API endpoints are the following:
   - Obtaining an access token to the API;
   - Retrieving credentials based on a filter that identifies the credential;
@@ -16,22 +18,9 @@ The API endpoints that are implemented in this first version are the following, 
   - GET /api/services/app/Credentials/GetAllCredentials?Filter= - Get Credentials Request
   - GET /api/services/app/Credentials/GetCredentialSecret?CredentialId= - Get Credential Secret Request
 
-## Authenticate Request
-
-The Authenticate Request requires the following body:
-
-```json
-{
-  "userNameOrEmailAddress": "example.username",
-  "password": "example.password"
-}
-```
-
 This API Client implementation only returns the relevant information to be used in the other requests, such as the accessToken and the userId.
 
 ## Get Credentials Request
-
-The Get Credentials Request must send the "authorization" header with the token obtained from the Authenticate Request. The Filter query parameter is allowed to be any string, and the request will return the corresponding results for credentials that match the string in the filter either in the name field or user-name field of the credential.
 
 This API Client implementation returns the first credential that matches the filter and only returns relevant information to be used in the Get Credential Secret request, such as the credential id. In order to return the first credential, the function `get_credential_by_filter` should be called. 
 
@@ -53,7 +42,7 @@ The function `get_credential_secret_by_credential_name` encapsulates the three r
 
 ## Example returns
 
-All of the functions that interact with the API endpoints previosly described in this document return an object with 2 (two) fields: `data` and `status`. The `data` field may be an array, an object or `null`, depending on the function called and the response received by the API.
+All of the functions that interact with the API endpoints previously described in this document return an object with 2 (two) fields: `data` and `status`. The `data` field may be an array, an object or `null`, depending on the function called and the response received by the API.
 
 ### `authorize`
 

@@ -20,10 +20,7 @@ lint: image
 	$(dockerrun) ./hack/lint.sh $(parameters)
 
 check-integration: image
-	docker-compose run $(ENVS) --rm pyvaultone ./hack/check-integration.sh $(parameters)
-
-cleanup: 
-	docker-compose down
+	$(dockerrun) ./hack/check-integration.sh $(parameters)
 
 coverage: image
 	$(dockerrun) ./hack/check.sh --coverage

@@ -1,4 +1,0 @@
-pyvaultone:
-    image: pyvaultone:latest
-    volumes:
-     - .:/app
