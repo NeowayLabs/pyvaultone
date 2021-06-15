@@ -1,6 +1,6 @@
 # pyvaultone
 
-[![Build Status](https://travis-ci.com/NeowayLabs/pyvaultone.svg?branch=main)](https://travis-ci.com/NeowayLabs/pyvaultone)
+[![Build Status](https://travis-ci.com/NeowayLabs/pyvaultone.svg)](https://travis-ci.com/NeowayLabs/pyvaultone)
 
 This project is a library to abstract relevant interactions to the VaultOne application API. Relevant interactions are defined as necessary interactions in order for a bot to retrieve credentials that will be used in the crawling process.
 
