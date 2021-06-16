@@ -42,7 +42,7 @@ The function `get_credential_secret_by_credential_name` encapsulates the three r
 
 ## Example returns
 
-All of the functions that interact with the API endpoints previously described in this document return an object with 2 (two) fields: `data` and `status`. The `data` field may be an array, an object or `null`, depending on the function called and the response received by the API.
+All of the functions that interact with the API endpoints previously described in this document return a dict with 2 (two) fields: `data` and `status`. The `data` field may be an array, a dict or `null`, depending on the function called and the response received by the API.
 
 ### `authorize`
 
